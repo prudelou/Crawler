@@ -178,7 +178,7 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="7" GridPane.rowIndex="1" GridPane.rowSpan="5">
                      <children>
-                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="5.0">
                            <children>
                               <TreeView prefHeight="200.0" prefWidth="200.0" />
                               <Button defaultButton="true" mnemonicParsing="false" text="Ouvrir" />
