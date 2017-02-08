@@ -9,8 +9,16 @@ import java.io.File;
 
 import javafx.stage.DirectoryChooser;
 
-
 public class ProcessCrawler {
+	
+	// CurrentDirectory
+	File currentDirectory;
+	
+	// Constructor of ProcessCrawler. Initialize currentDirectory to userDirectory
+	ProcessCrawler(){
+		// Initialize currentDirectory to userDirectory
+		currentDirectory = new File(System.getProperty("user.home"));
+	}
 	
 	// Return the path of a directory choose by a DirectoryChooser
     public String getDirectory(){
@@ -18,7 +26,7 @@ public class ProcessCrawler {
     	// Initialize Directory Chooser
     	DirectoryChooser directoryChooser = new DirectoryChooser();
     	// Set Initial Directory
-    	directoryChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+    	directoryChooser.setInitialDirectory(currentDirectory);
     	// Wait user's choice
         File selectedDirectory = directoryChooser.showDialog(null);
         
@@ -26,7 +34,8 @@ public class ProcessCrawler {
         if(selectedDirectory == null){
         	return "";
         }else{
-        	// Return Path of directory
+        	// Change currentDirectory and return Path of directory
+        	currentDirectory = new File(selectedDirectory.getAbsolutePath());
             return selectedDirectory.getAbsolutePath();
         }
     }
