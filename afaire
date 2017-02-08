@@ -19,9 +19,13 @@ Intepréteur
 
 Classes
 
-- Download : Récupération des infos de crawl et lancement 
-- InfosDownload :
-- Langue : Gestion de la langue (plusieurs fichiers de langues qui se mettent à jour automatiquement)
-- DisplayTree : Gestion du tree et des deux boutons (ouvrir et supprimer)
+- ProcessCrawler : Récupération des infos de crawl et lancement 
+
+- Language : Gestion de la langue (plusieurs fichiers de langues qui se mettent à jour automatiquement)
+
+- ProgressDownload
+
+- Display : Gestion du tree et des deux boutons (ouvrir et supprimer)
+Affichage de la page
 
 
