@@ -53,21 +53,21 @@
                   </Label>
                   <Label text="URL : " GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
                   <Label text="Explorer les liens ?" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-                  <Label text=" images/vidéo ?" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-                  <TextField GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-                  <CheckBox mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                  <Label text="images/vidéo ?" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                  <TextField fx:id="textFielURL" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="checkBoxLien" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <CheckBox fx:id="checkBoxIV" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
                   <Label text="Niveau de profondeur : " GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-                  <TextField disable="true" prefHeight="26.0" prefWidth="0.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                  <TextField fx:id="textFieldProfondeur" disable="true" prefHeight="26.0" prefWidth="0.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets right="50.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" text="Télécharger" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                  <Button fx:id="buttonDownload" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" text="Télécharger" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="5" />
                   <VBox prefHeight="51.0" prefWidth="111.0" GridPane.columnIndex="6">
                      <children>
                         <Label alignment="TOP_CENTER" text="Langue">
@@ -75,15 +75,15 @@
                               <Insets left="20.0" />
                            </VBox.margin>
                         </Label>
-                        <ChoiceBox prefHeight="26.0" prefWidth="76.0" />
+                        <ChoiceBox fx:id="choiceBoxLangue1" prefHeight="26.0" prefWidth="76.0" />
                      </children>
                      <GridPane.margin>
                         <Insets right="5.0" />
                      </GridPane.margin>
                   </VBox>
                   <Label text="Répertoire :" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" text="Parcourir" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                  <TextField fx:id="textFieldRepertoire" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <Button fx:id="buttonParcourir" mnemonicParsing="false" text="Parcourir" GridPane.columnIndex="5" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="5.0" />
                      </GridPane.margin></Button>
@@ -96,12 +96,12 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="47.0" prefWidth="370.0">
                            <children>
-                              <ProgressBar prefHeight="20.0" prefWidth="396.0" progress="0.0" />
+                              <ProgressBar fx:id="progressBarDownload1" prefHeight="20.0" prefWidth="396.0" progress="0.0" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <ProgressIndicator prefHeight="133.0" prefWidth="73.0" progress="0.0" />
+                              <ProgressIndicator fx:id="progressIndicatorDownload" prefHeight="133.0" prefWidth="73.0" progress="0.0" />
                            </children>
                         </VBox>
                      </children>
@@ -145,7 +145,7 @@
                               <Insets left="20.0" />
                            </VBox.margin>
                         </Label>
-                        <ChoiceBox prefHeight="26.0" prefWidth="76.0" />
+                        <ChoiceBox fx:id="choiceBoxLangue2" prefHeight="26.0" prefWidth="76.0" />
                      </children>
                      <GridPane.margin>
                         <Insets right="5.0" />
@@ -160,12 +160,12 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="47.0" prefWidth="370.0">
                            <children>
-                              <ProgressBar prefHeight="20.0" prefWidth="396.0" progress="0.0" />
+                              <ProgressBar fx:id="progressBarDownload2" prefHeight="20.0" prefWidth="396.0" progress="0.0" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <ProgressIndicator prefHeight="133.0" prefWidth="73.0" progress="0.0" />
+                              <ProgressIndicator fx:id="progressIndicator2" prefHeight="133.0" prefWidth="73.0" progress="0.0" />
                            </children>
                         </VBox>
                      </children>
@@ -180,15 +180,15 @@
                      <children>
                         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="5.0">
                            <children>
-                              <TreeView prefHeight="200.0" prefWidth="200.0" />
-                              <Button defaultButton="true" mnemonicParsing="false" text="Ouvrir" />
-                              <Button mnemonicParsing="false" text="Supprimer" />
+                              <TreeView fx:id="treeView" prefHeight="200.0" prefWidth="200.0" />
+                              <Button fx:id="buttonOuvrir" defaultButton="true" mnemonicParsing="false" text="Ouvrir" />
+                              <Button fx:id="buttonSupprimer" mnemonicParsing="false" text="Supprimer" />
                            </children>
                            <padding>
                               <Insets top="5.0" />
                            </padding>
                         </VBox>
-                        <ScrollPane prefHeight="274.0" prefWidth="478.0">
+                        <ScrollPane fx:id="scrollPane" prefHeight="274.0" prefWidth="478.0">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
