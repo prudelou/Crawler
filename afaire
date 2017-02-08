@@ -1,0 +1,27 @@
+Parcourir répertoire
+
+Gérer explorer les liens (boolean)
+Niveau de profondeur (en fonction du boolean précédent)
+Image/Vidéo (boolean)
+
+Barre et l'indicator de téléchargement
+Langue
+
+Arboresence
+Ouverture page
+Suppression Page
+Intepréteur
+
+
+
+
+============================================================================
+
+Classes
+
+- Download : Récupération des infos de crawl et lancement 
+- InfosDownload :
+- Langue : Gestion de la langue (plusieurs fichiers de langues qui se mettent à jour automatiquement)
+- DisplayTree : Gestion du tree et des deux boutons (ouvrir et supprimer)
+
+
