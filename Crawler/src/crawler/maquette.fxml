@@ -55,7 +55,7 @@
                   <Label fx:id="labelLien" text="Explorer les liens ?" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
                   <Label text="images/vidéo ?" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
                   <TextField fx:id="textFielURL" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-                  <CheckBox fx:id="checkBoxLien" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                  <CheckBox fx:id="checkBoxLien" mnemonicParsing="false" onMouseClicked="#listenerCheckBox" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
@@ -67,7 +67,7 @@
                         <Insets right="50.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Button fx:id="buttonDownload" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" text="Télécharger" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                  <Button fx:id="buttonDownload" mnemonicParsing="false" onMouseClicked="#listenerDownload" prefHeight="26.0" prefWidth="107.0" text="Télécharger" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="5" />
                   <VBox prefHeight="51.0" prefWidth="111.0" GridPane.columnIndex="6">
                      <children>
                         <Label fx:id="labelLangue1" alignment="TOP_CENTER" text="Langue">
@@ -75,7 +75,7 @@
                               <Insets left="20.0" />
                            </VBox.margin>
                         </Label>
-                        <ChoiceBox fx:id="choiceBoxLangue1" prefHeight="26.0" prefWidth="76.0" />
+                        <ChoiceBox fx:id="choiceBoxLangue1" onContextMenuRequested="#listenerLangueContext1" onMouseClicked="#listenerLangueClicked" prefHeight="26.0" prefWidth="76.0" />
                      </children>
                      <GridPane.margin>
                         <Insets right="5.0" />
@@ -83,7 +83,7 @@
                   </VBox>
                   <Label fx:id="labelRepertoire" text="Répertoire :" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
                   <TextField fx:id="textFieldRepertoire" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <Button fx:id="buttonParcourir" mnemonicParsing="false" text="Parcourir" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                  <Button fx:id="buttonParcourir" mnemonicParsing="false" onMouseClicked="#listenerParcourir" text="Parcourir" GridPane.columnIndex="5" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="5.0" />
                      </GridPane.margin></Button>
@@ -145,7 +145,7 @@
                               <Insets left="20.0" />
                            </VBox.margin>
                         </Label>
-                        <ChoiceBox fx:id="choiceBoxLangue2" prefHeight="26.0" prefWidth="76.0" />
+                        <ChoiceBox fx:id="choiceBoxLangue2" onContextMenuRequested="#listenerLangueContext2" onMouseClicked="#listenerLangueClicked2" prefHeight="26.0" prefWidth="76.0" />
                      </children>
                      <GridPane.margin>
                         <Insets right="5.0" />
@@ -181,8 +181,8 @@
                         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="5.0">
                            <children>
                               <TreeView fx:id="treeView" prefHeight="200.0" prefWidth="200.0" />
-                              <Button fx:id="buttonOuvrir" defaultButton="true" mnemonicParsing="false" text="Ouvrir" />
-                              <Button fx:id="buttonSupprimer" mnemonicParsing="false" text="Supprimer" />
+                              <Button fx:id="buttonOuvrir" defaultButton="true" mnemonicParsing="false" onMouseClicked="#listenerOuvrir" text="Ouvrir" />
+                              <Button fx:id="buttonSupprimer" mnemonicParsing="false" onMouseClicked="#listenerSupprimer" text="Supprimer" />
                            </children>
                            <padding>
                               <Insets top="5.0" />
