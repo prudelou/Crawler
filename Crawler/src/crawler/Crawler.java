@@ -11,20 +11,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- *
- * @author amnesia
- */
+
 public class Crawler extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("maquette.fxml"));
-        
+        Parent root = FXMLLoader.load(getClass().getResource("maquette.fxml"));    
         Scene scene = new Scene(root);
-        
         stage.setScene(scene);
         stage.show();
+        
     }
 
     /**
