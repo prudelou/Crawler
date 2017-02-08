@@ -16,7 +16,7 @@ import javafx.scene.control.Label;
  *
  * @author amnesia
  */
-public class Maquette implements Initializable {
+public class Controller implements Initializable {
     
     @FXML
     private Label label;
