@@ -18,9 +18,9 @@ public class Crawler extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("maquette.fxml"));    
         Scene scene = new Scene(root);
+        stage.setTitle("Crawler");
         stage.setScene(scene);
-        stage.show();
-        
+        stage.show();       
     }
 
     /**
