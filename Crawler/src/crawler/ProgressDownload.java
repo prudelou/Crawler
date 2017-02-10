@@ -20,14 +20,13 @@ public class ProgressDownload {
 	}
 
 	// Set the value of downloadProgress
-	public void setDownloadProgress(DoubleProperty downloadProgress) {
-		this.downloadProgress = downloadProgress;
+	public void setDownloadProgress(Double value) {
+		this.downloadProgress.set(value);
 	}
 
 	//Constructor of ProgressDownload. Allows to instantiate downloadProgress.
 	ProgressDownload(){
-		downloadProgress = new SimpleDoubleProperty(0.2);
+		downloadProgress = new SimpleDoubleProperty(0);
 	}
-	
 	
 }
