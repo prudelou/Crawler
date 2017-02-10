@@ -5,10 +5,21 @@
  */
 package crawler;
 
+import javafx.scene.control.TreeView;
+
 /**
  *
  * @author amnesia
  */
 public class Display {
+    private TreeView treeView;
+    
+    public Display(TreeView treeView) {
+        this.treeView = treeView;
+        this.build();
+    }
+    private void build(){
+        
+    }
     
 }
