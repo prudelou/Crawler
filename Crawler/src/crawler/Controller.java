@@ -114,7 +114,7 @@ public class Controller implements Initializable {
 		this.progressDownload = new ProgressDownload();
 		this.processCrawler = new ProcessCrawler();
 		this.language = new Language(choiceBoxLangue1, choiceBoxLangue2, this.resources);
-		this.display = new Display(treeView);
+		this.display = new Display(treeView, textFieldRepertoire2);
 
                 // Bind ProgressBarDownload & ProgressBarIndicator with DoubleProperty
 		this.progressBarDownload1.progressProperty().bind(progressDownload.getDownloadProgress());
