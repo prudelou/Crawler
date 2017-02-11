@@ -147,7 +147,7 @@ public class ProcessCrawler {
                                 	Charset charset = StandardCharsets.UTF_8;
 
                                 	String content = new String(Files.readAllBytes(path), charset);
-                                	content = content.replaceAll(imgSrc, imagePath);
+                                	content = content.replaceAll(imgSrc, "file://"+imagePath);
                                 	Files.write(path, content.getBytes(charset));
                                 	
                                 } catch (IOException ex) {
