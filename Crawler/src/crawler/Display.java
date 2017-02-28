@@ -63,9 +63,6 @@ public class Display {
         });
         
     }
-    private void buildWebView() {
-        
-    }
     private void updateTreeView(String repertoire){
         String[] r = repertoire.split("/");
         TreeItem root = new TreeItem(r[r.length-1], new ImageView(dossier));
@@ -119,13 +116,33 @@ public class Display {
         
     }
     public void remove(){
-        if(verifExtension(this.chemin)) {
-            File file = new File(this.repertoireSelected+"/"+this.chemin);
-            file.delete();
-            this.inChange = true;
-            this.updateTreeView(this.repertoireSelected);
-            this.inChange = false;
+        this.inChange = true;
+        File file = new File(this.repertoireSelected+"/"+this.chemin);
+        if(file.isDirectory()) {
+            System.out.println("Start supr directory");
+            this.removeRepertoire(file, this.repertoireSelected + "/" + this.chemin);
         }
+        else {
+            file.delete();
+        }
+        this.updateTreeView(this.repertoireSelected);
+        this.inChange = false;
+    }
+    private void removeRepertoire(File dir, String repertoire) {
+        String[] s = dir.list();
+        for (String item : s) {
+            File dirTemp = new File(repertoire + "/" + item);
+            System.out.println("check : " + repertoire + " : " + item + " : " + dirTemp);
+            if (dirTemp.isDirectory()) {
+                System.out.println("removeRepertoire : " + item);
+                this.removeRepertoire(dirTemp, repertoire + "/" + item);
+            }else {
+                System.out.println("remove file: " + item);
+                dirTemp.delete();
+            }
+        }
+        System.out.println("remove dir: " + dir);
+        dir.delete();
     }
     private boolean verifExtension(String item){
         if (item.lastIndexOf(".") > 0) {
