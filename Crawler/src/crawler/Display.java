@@ -6,9 +6,6 @@
 package crawler;
 
 import java.io.File;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
@@ -119,7 +116,6 @@ public class Display {
         this.inChange = true;
         File file = new File(this.repertoireSelected+"/"+this.chemin);
         if(file.isDirectory()) {
-            System.out.println("Start supr directory");
             this.removeRepertoire(file, this.repertoireSelected + "/" + this.chemin);
         }
         else {
@@ -132,16 +128,12 @@ public class Display {
         String[] s = dir.list();
         for (String item : s) {
             File dirTemp = new File(repertoire + "/" + item);
-            System.out.println("check : " + repertoire + " : " + item + " : " + dirTemp);
             if (dirTemp.isDirectory()) {
-                System.out.println("removeRepertoire : " + item);
                 this.removeRepertoire(dirTemp, repertoire + "/" + item);
             }else {
-                System.out.println("remove file: " + item);
                 dirTemp.delete();
             }
         }
-        System.out.println("remove dir: " + dir);
         dir.delete();
     }
     private boolean verifExtension(String item){
