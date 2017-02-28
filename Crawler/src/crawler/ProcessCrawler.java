@@ -44,6 +44,7 @@ public class ProcessCrawler {
 	// CurrentDirectory
 	File currentDirectory;
 	
+	
 	// Constructor of ProcessCrawler. Initialize currentDirectory to userDirectory
 	ProcessCrawler(){
 		// Initialize currentDirectory to userDirectory
@@ -71,8 +72,9 @@ public class ProcessCrawler {
     }
     
     // Launch download process
-    public void download(String urlString, String pathDirectory,boolean hasProfondeur, String profondeur, boolean withMedia, DoubleProperty downloadProgess){
-        downloadProgess.set(0);
+    public void download(String urlString, String pathDirectory,boolean hasProfondeur, String profondeur, boolean withMedia, ProgressDownload pd){
+
+    	new Thread(){ public void run(){pd.setDownloadProgress(0.00);}}.start();
 
     	URL url;
         InputStream is = null;
@@ -88,16 +90,18 @@ public class ProcessCrawler {
             NetworkInterface networkInterface = interfaces.nextElement();
             if (!networkInterface.isUp()){
             	openErrorDialog("no connection", "No connection", "Please use a true connection...");
-            	downloadProgess.set(0);
+            	new Thread(){ public void run(){pd.setDownloadProgress(0.00);}}.start();
             	return;
             }
 
         	
         	//Test if URL exists
-        	downloadProgess.set(0.1);
+        	new Thread(){ public void run(){pd.setDownloadProgress(0.10);}}.start();
+
         	if (urlExists(urlString)){
 
-            	downloadProgess.set(0.2);
+            	new Thread(){ public void run(){pd.setDownloadProgress(0.20);}}.start();
+
               	url =  new URL(urlString);
                 is = url.openStream();  // throws an IOException
                 br = new BufferedReader(new InputStreamReader(is));
@@ -111,13 +115,13 @@ public class ProcessCrawler {
                 writer = new PrintWriter(file.getPath(), "UTF-8");
                 
                 // Search which process we will use
-            	downloadProgess.set(0.3);
+            	new Thread(){ public void run(){pd.setDownloadProgress(0.30);}}.start();
                 if (!hasProfondeur){
                 	
                 	// Use Standard Process : Without Image and Video
-            		simpleDownload(downloadProgess, br, writer );
+            		simpleDownload(pd, br, writer );
             		
-                	downloadProgess.set(0.4);
+                	new Thread(){ public void run(){pd.setDownloadProgress(0.40);}}.start();
                 	
                 	if (withMedia){
 
@@ -157,28 +161,33 @@ public class ProcessCrawler {
                         }
                 	
                 	}
-                }	  
-            	downloadProgess.set(0.9);
+                }
+                
+                else{
+                	// Désolé nous n'avons pas eu le temps de mettre cette fonctionnalité.             	
+                }
+            	new Thread(){ public void run(){pd.setDownloadProgress(0.90);}}.start();
                 writer.close();
-            	downloadProgess.set(1);
+            	new Thread(){ public void run(){pd.setDownloadProgress(1.0);}}.start();
+
 
         	}
-        	else downloadProgess.set(0);
 
             
         } catch (MalformedURLException ioe) {
-        	downloadProgess.set(0);
+            pd.setDownloadProgress(0.00);
              ioe.printStackTrace();
          	
 
-	    } catch (Exception ioe) { ioe.printStackTrace();downloadProgess.set(0);
+	    } catch (Exception ioe) { ioe.printStackTrace(); pd.setDownloadProgress(0.00);
+
 
 	   } finally {
             try {
                 if (is != null) is.close();
             } catch (IOException ioe) {
                 ioe.printStackTrace();
-            	downloadProgess.set(0);
+                pd.setDownloadProgress(0.00);
 
             }
         }
@@ -222,17 +231,16 @@ public class ProcessCrawler {
         return fileName2.replaceAll("/", "_");
     }
     
-    public void simpleDownload(DoubleProperty downloadProgess, BufferedReader br, PrintWriter writer) throws IOException{
+    public void simpleDownload(ProgressDownload pd, BufferedReader br, PrintWriter writer) throws IOException{
     	String line = "";
-       	downloadProgess.set(0.5);
+        pd.setDownloadProgress(0.50);
         while ((line = br.readLine()) != null) {
             writer.println(line); 
-        	downloadProgess.set(downloadProgess.get()+0.05);
+            pd.setDownloadProgress(pd.getDownloadProgress().get()+0.05);
+
         }
     }
-    
-    public void simpleDownloadWithMedia(DoubleProperty downloadProgess, BufferedReader br, PrintWriter writer, String pathDir) throws IOException{
-    }
+
     
     public String createDirectory(String path, String name){
     	// if the directory does not exist, create it

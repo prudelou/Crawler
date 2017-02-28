@@ -12,7 +12,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 public class ProgressDownload {
 	
 	// Indicator of download process
-	DoubleProperty downloadProgress;
+	public DoubleProperty downloadProgress;
 	
 	// Get the value of downloadProgress
 	public DoubleProperty getDownloadProgress() {
@@ -21,8 +21,12 @@ public class ProgressDownload {
 
 	// Set the value of downloadProgress
 	public void setDownloadProgress(Double value) {
-		this.downloadProgress.set(value);
+		
+
+	downloadProgress.set(value);
+
 	}
+
 
 	//Constructor of ProgressDownload. Allows to instantiate downloadProgress.
 	ProgressDownload(){

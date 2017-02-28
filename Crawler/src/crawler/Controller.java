@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-import javafx.collections.FXCollections;
 
 import javafx.scene.control.Button;
 
@@ -18,7 +17,6 @@ import javafx.scene.control.Label;
 
 import javafx.scene.control.ProgressBar;
 
-import javafx.scene.control.ScrollPane;
 
 import javafx.scene.control.Tab;
 
@@ -27,8 +25,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.control.CheckBox;
 
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Tooltip;
-import javafx.scene.control.TreeItem;
+
 
 import javafx.scene.control.TreeView;
 
@@ -125,6 +122,8 @@ public class Controller implements Initializable {
 
 		// Initialize current directory to user directory
 		this.textFieldRepertoire.setText(System.getProperty("user.home"));
+		
+		checkBoxLien.setDisable(true); // Becaise not implemented
 	}
 
 
@@ -145,7 +144,7 @@ public class Controller implements Initializable {
 									this.checkBoxLien.isSelected(),
 									this.textFieldProfondeur.getText(),
 									this.checkBoxIV.isSelected(),
-									this.progressDownload.getDownloadProgress());
+									this.progressDownload);
 
 	}
 	// Event Listener on ChoiceBox[#choiceBoxLangue1].onContextMenuRequested
