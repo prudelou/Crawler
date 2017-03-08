@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="m1.piu.FXMLTableController">
-    <stylesheets>
-        <URL value="@fxmltable.css"/>
-    </stylesheets>
-</AnchorPane>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView prefHeight="400.0" prefWidth="600.0">
+        <columns>
+          <TableColumn prefWidth="133.0" text="Nom" />
+          <TableColumn minWidth="7.0" prefWidth="128.0" text="Prénom" />
+            <TableColumn minWidth="0.0" prefWidth="338.0" text="Email" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>
