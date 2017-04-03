@@ -6,11 +6,11 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+      <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="100.0" prefHeight="1500.0" prefWidth="1500.0">
         <columns>
-          <TableColumn prefWidth="133.0" text="Nom" />
-          <TableColumn minWidth="7.0" prefWidth="128.0" text="Prénom" />
-            <TableColumn minWidth="0.0" prefWidth="338.0" text="Email" />
+          <TableColumn maxWidth="1.7976931348623157E308" prefWidth="133.0" text="Nom" />
+          <TableColumn maxWidth="1.7976931348623157E308" minWidth="7.0" prefWidth="128.0" text="Prénom" />
+            <TableColumn maxWidth="-Infinity" minWidth="300.0" prefWidth="1500.0" text="Email" />
         </columns>
       </TableView>
    </children>
