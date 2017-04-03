@@ -32,10 +32,9 @@
         <file name="Window_hidden"/>
     </folder>
     <folder name="Toolbars">
-        <file name="File_hidden"/>
+        <file name="Clipboard_hidden"/>
         <file name="Memory_hidden"/>
         <file name="Standard.xml_hidden"/>
-        <folder name="Toolbar"/>
         <file name="UndoRedo_hidden"/>
     </folder>
 </filesystem>
