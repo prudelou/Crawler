@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="m1.piu.FXMLMainFrameController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="m1.piu.FXMLMainFrameController">
    <top>
       <VBox prefHeight="53.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -63,7 +63,7 @@
    <center>
       <SplitPane dividerPositions="0.26588628762541805" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane fx:id="addressPane" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="200.0" />
+          <AnchorPane fx:id="addressPane" minHeight="0.0" minWidth="0.0" />
             <SplitPane dividerPositions="0.5111821086261981" minHeight="0.0" minWidth="0.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
               <items>
                 <AnchorPane fx:id="listPane" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="600.0" />

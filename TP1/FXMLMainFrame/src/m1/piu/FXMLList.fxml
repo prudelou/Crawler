@@ -10,7 +10,7 @@
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0">
          <children>
             <Label text="Address books" VBox.vgrow="ALWAYS" />
-            <ListView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" VBox.vgrow="ALWAYS" />
+            <ListView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1500.0" prefWidth="1500.0" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
    </children>
