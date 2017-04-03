@@ -3,7 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Z:/home/pierre/Git/PrototypageEtInterface/TP1/FXMLMainFrame/src/m1/piu/fxmlmainpanel.css</file>
+            <file>file:/home/pierre/Git/PrototypageEtInterface/TP1/FXMLMainFrame/src/m1/piu/FXMLMainFrameController.java</file>
+            <file>file:/home/pierre/Git/PrototypageEtInterface/TP1/FXMLMainFrame/src/m1/piu/FXMLMainFrame.fxml</file>
+            <file>file:/home/pierre/Git/PrototypageEtInterface/TP1/FXMLMainFrame/src/m1/piu/ContactManagerFX.java</file>
         </group>
     </open-files>
 </project-private>
