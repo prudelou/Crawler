@@ -7,6 +7,8 @@ package m1.piu;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import org.openide.DialogDisplayer;
+import org.openide.NotifyDescriptor;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionRegistration;
@@ -25,6 +27,11 @@ public final class Clean implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO implement action body
+        // TODO implement action body        
+        String msg = "Are you sure you want to clear EVERYTHING!!!!!???";
+        NotifyDescriptor nd = new NotifyDescriptor.Confirmation(msg, NotifyDescriptor.YES_NO_OPTION);
+        Object result = DialogDisplayer.getDefault().notify(nd);
+        if (result.toString().contains("0")) {
+            DialogDisplayer.getDefault().notify(new NotifyDescriptor.Message("You clean everything.", NotifyDescriptor.WARNING_MESSAGE));        } 
     }
 }
